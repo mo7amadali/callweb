@@ -1,0 +1,4 @@
+name = EditLoginForm
+description = Edit Login Form.
+core = 7.x
+php = 5.0

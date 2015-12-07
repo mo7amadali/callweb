@@ -1,0 +1,25 @@
+<?php
+/**
+* Implementation of hook_form_alter().
+*
+* This lets you make changes to any form in the site. You can alter, remove
+* or add form elements. You can also alter the validation and submission
+* behavior. The name will always be modulename_form_alter.
+*/
+function edit_loginform_form_alter(&$form, $form_state, $form_id) {
+  // Normally a switch is used because you may want to alter more than
+  // one form and it is easy to add a new case for each form.
+  switch ($form_id) {
+    // This is our form ID.
+    case 'user_login':
+      // Print out the $form array to see all the elements we are working with.
+      //$output .= dsm($form);
+      // Once I know which part of the array I'm after we can change it.
+      
+      // Change the Username field title to Login ID.
+      $form['name']['#description']=t('<span class="login-description">Enter your <b>AUC</b> username.</span>');
+	  $form['pass']['#description']=t('<span class="login-description">Enter the password that accompanies your username.</span>');
+      break;
+  }
+}
+?>
